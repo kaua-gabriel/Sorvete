@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Paga um Sorvete?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #5e4b8b;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .sim {
+            background-color: #ff8c00;
+            color: white;
+        }
+        .nao {
+            background-color: #ddd;
+            color: #bbb;
+            cursor: not-allowed;
+        }
+        .sim:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Me paga um sorvete?</h1>
+        <button class="sim" onclick="respostaSim()">Sim</button>
+        <button class="nao" onclick="teleportarNao()">Não</button>
+    </div>
+
+    <script>
+        function respostaSim() {
+            alert("Obrigado pelo sorvete!");
+        }
+
+        function teleportarNao() {
+            // Gera uma posição aleatória na tela
+            var x = Math.floor(Math.random() * (window.innerWidth - 100));
+            var y = Math.floor(Math.random() * (window.innerHeight - 100));
+            
+            // Move o botão "Não" para a nova posição
+            var naoButton = document.querySelector('.nao');
+            naoButton.style.position = 'absolute';
+            naoButton.style.left = x + 'px';
+            naoButton.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
