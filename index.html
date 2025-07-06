@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Me Paga um Sorvete?</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0a0a0a, #1a3c54);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(14px) brightness(1.1);
+      -webkit-backdrop-filter: blur(14px) brightness(1.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: 320px;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #4a90a4; /* azul meio vítreo */
+      text-shadow: 0 0 8px #75a9c5;
+    }
+
+    button {
+      padding: 12px 26px;
+      margin: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      color: #fff;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
+    }
+
+    .sim {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      box-shadow: 0 4px 12px #2ecc71aa;
+    }
+
+    .sim:hover {
+      background: linear-gradient(135deg, #27ae60, #219150);
+      transform: scale(1.05);
+    }
+
+    .nao {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      box-shadow: 0 4px 12px #e74c3caa;
+      position: relative; /* sem absolute inicialmente */
+    }
+
+    .nao:hover {
+      background: linear-gradient(135deg, #c0392b, #992d22);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Me paga um sorvete?</h1>
+    <button class="sim" onclick="respostaSim()">Sim</button>
+    <button class="nao" onclick="teleportarNao()">Não</button>
+  </div>
+
+  <script>
+    function respostaSim() {
+      alert("Obrigado pelo sorvete!");
+    }
+
+    function teleportarNao() {
+      var naoButton = document.querySelector('.nao');
+      naoButton.style.position = 'absolute';
+      var x = Math.floor(Math.random() * (window.innerWidth - naoButton.offsetWidth));
+      var y = Math.floor(Math.random() * (window.innerHeight - naoButton.offsetHeight));
+      naoButton.style.left = x + 'px';
+      naoButton.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
